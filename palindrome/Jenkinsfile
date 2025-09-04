@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repo') {
+            steps {
+                git url: 'https://github.com/Eb1n-Babu/jenkins.git', branch: 'main'
+            }
+        }
+
+        stage('Run Unit Tests') {
+            steps {
+                sh 'python3 -m unittest palindrome/test_palindrome.py'
+            }
+        }
+    }
+}
