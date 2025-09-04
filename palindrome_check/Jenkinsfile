@@ -10,7 +10,7 @@ pipeline {
 
         stage('Run Unit Tests') {
             steps {
-                bat 'C:\\Users\\ebinb\\AppData\\Local\\Programs\\Python\\Python313\\python.exe -m unittest palindrome\\test_palindrome.py'
+                bat 'C:\\Users\\ebinb\\AppData\\Local\\Programs\\Python\\Python313\\python.exe -m unittest palindrome_check\\test_palindrome.py'
             }
         }
     }
