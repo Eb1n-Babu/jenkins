@@ -1,0 +1,19 @@
+pipeline {
+	agent any
+	stages {
+		stage("checkout git"){
+			steps{
+				git "https://github.com/Eb1n-Babu/jenkins.git"
+			}
+		}
+	    stage("run django test"){
+			steps{
+				bat """
+				python -m venv venv
+                venv\\Scripts\\pip install -r requirements.txt
+                venv\\Scripts\\python manage.py test
+                """
+			}
+		}
+	}
+}
