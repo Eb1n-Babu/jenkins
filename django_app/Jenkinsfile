@@ -19,6 +19,7 @@ pipeline {
 		stage("docker"){
 			steps{
 				bat """
+				cd django_app
 				docker build -t django:wip .
 				docker run -d --name djangocontainer -p 8000:8000 django:wip
 				"""
