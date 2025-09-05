@@ -1,20 +1,16 @@
-# Use official Python image
-FROM python:3.13.3
+FROM python:3.10
 
-# Set working directory inside the container
+# Set working directory inside container
 WORKDIR /app
 
-# Copy dependency file first (for caching)
-COPY requirements.txt .
+# Copy all project files into /app
+COPY . /app
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of your Django project
-COPY django_app/ .
-
-# Expose Django’s default port
+# Expose Django port
 EXPOSE 8000
 
-# Run the Django development server
+# Run Django server
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
