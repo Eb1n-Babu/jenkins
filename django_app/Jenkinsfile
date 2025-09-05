@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage("checkout git"){
 			steps{
-				git "https://github.com/Eb1n-Babu/jenkins.git"
+				git url: 'https://github.com/Eb1n-Babu/jenkins.git', branch: 'main'
 			}
 		}
 	    stage("run django test"){
