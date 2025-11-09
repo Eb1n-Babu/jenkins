@@ -1,5 +1,5 @@
 import unittest
-from prime import find_prime
+from prime import *
 
 
 class test_prime(unittest.TestCase):
