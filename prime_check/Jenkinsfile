@@ -10,7 +10,7 @@ pipeline {
 
         stage('Run Unit Tests') {
             steps {
-                bat 'python -m unittest prime_check\\test_prime.py'
+                bat 'cd prime_check && python -m unittest test_prime.py'
             }
         }
     }
