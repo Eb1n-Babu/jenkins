@@ -2,15 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repo') {
+        stage('Run Tests') {
             steps {
-                git url: 'https://github.com/Eb1n-Babu/jenkins.git', branch: 'main'
-            }
-        }
-
-        stage('Run Unit Tests') {
-            steps {
-                bat 'C:\\Users\\ebinb\\AppData\\Local\\Programs\\Python\\Python313\\python.exe -m unittest anagram\\test_anagram.py'
+                bat 'python -m unittest jenkins\\anagram\\test_anagram.py'
             }
         }
     }
