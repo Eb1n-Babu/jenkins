@@ -10,7 +10,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat 'python -m unittest jenkins\\anagram\\test_anagram.py'
+                bat 'python -m unittest anagram\\test_anagram.py'
             }
         }
     }
