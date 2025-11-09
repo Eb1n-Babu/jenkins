@@ -10,8 +10,17 @@ pipeline {
 
         stage('Run Unit Tests') {
             steps {
-                bat 'C:\\Users\\ebinb\\AppData\\Local\\Programs\\Python\\Python313\\python.exe -m unittest prime_check\\test_prime.py'
+                bat '"C:\\Users\\ebinb\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m unittest discover -s . -p "test_*.py"'
             }
+        }
+    }
+
+    post {
+        success {
+            echo '✅ All tests passed!'
+        }
+        failure {
+            echo '❌ Tests failed.'
         }
     }
 }
