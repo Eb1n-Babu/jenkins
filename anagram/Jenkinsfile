@@ -8,9 +8,9 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
+        stage('Run Unit Tests') {
             steps {
-                bat 'cd jenkins && python -m unittest anagram.test_anagram'
+                bat 'cd anagram && python test_anagram.py'
             }
         }
     }
