@@ -10,7 +10,7 @@ pipeline {
 
         stage('Run Unit Tests') {
             steps {
-                bat 'cd palindrome_check && python -m unittest palindrome_check\\test_palindrome.py'
+                bat 'cd palindrome_check && python test_palindrome.py'
             }
         }
     }
