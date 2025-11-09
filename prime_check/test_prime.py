@@ -1,18 +1,18 @@
 import unittest
-from prime_check.prime import prime_check
+from prime import find_prime
 
 
 class test_prime(unittest.TestCase):
     def test_prime(self):
-        self.assertTrue(prime_check(2))
-        self.assertTrue(prime_check(3))
-        self.assertFalse(prime_check(4))
-        self.assertTrue(prime_check(5))
-        self.assertFalse(prime_check(6))
-        self.assertTrue(prime_check(7))
-        self.assertFalse(prime_check(8))
-        self.assertFalse(prime_check(9))
-        self.assertFalse(prime_check(10))
+        self.assertTrue(find_prime(2))
+        self.assertTrue(find_prime(3))
+        self.assertFalse(find_prime(4))
+        self.assertTrue(find_prime(5))
+        self.assertFalse(find_prime(6))
+        self.assertTrue(find_prime(7))
+        self.assertFalse(find_prime(8))
+        self.assertFalse(find_prime(9))
+        self.assertFalse(find_prime(10))
 
 if __name__ == '__main__':
     unittest.main()
